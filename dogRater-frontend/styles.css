@@ -1,0 +1,164 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background: #F5FFFA;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+/* these are the line breaks under Profile and likes */
+hr {
+  color: rgb(226, 224, 224);
+  background-color: rgb(226, 224, 224);
+  height: 1px;
+  border: none;
+}
+
+/* this is the full div that holds everything in place */
+.full-div {
+  width: 98%;
+  height: 900px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+/* the main top doggo div */
+.top-dog-container {
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  width: 300px;
+  border: 1px solid #00000020;
+  border-radius: 3px;
+  text-align: center;
+  background-color: white; 
+}
+ 
+/* the main post div */
+.post-container {
+  width: 500px;
+}
+
+
+.user-div {
+  width: 200px;
+  border: 1px solid #00000020;
+  border-radius: 3px;
+  text-align: center;
+  background-color: white;
+  
+}
+
+/* top dog inner container's */
+.container-body li {
+  text-align: center;
+  color: rgb(88, 88, 88);
+}
+
+.username {
+  padding: 10px;
+}
+
+.user-div #p-1, #p-2 {
+  color: rgb(88, 88, 88);
+}
+
+.user-div hr {
+  width: 150px;
+}
+
+.post-card {
+  width: 500px;
+  border: 1px solid #00000020;
+  border-radius: 3px;
+  text-align: left;
+  background-color: white;
+  padding: 10px;
+}
+#icon {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#image {
+  width: 500px;
+  border-radius: 8px;
+  /* border: 1px solid black; */
+}
+.likes-section {
+  align-items: center;
+}
+
+.likes {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.like-button {
+  color: rgb(255, 127, 80);
+  font-size: 1.2rem;
+  border: none;
+  background: none;
+  transition: color 300ms;
+  cursor: pointer;;
+}
+
+.like-button:hover {
+  color: rgb(241, 71, 19);
+}
+
+.like-button:active {
+  color: rgb(253, 159, 124);
+}
+
+.like-button:focus {
+  outline: none;
+}
+
+.comment-button {
+  color: rgb(185, 185, 185);
+  font-size: 1.2rem;
+  border: none;
+  background: none;
+  transition: color 300ms;
+  cursor: pointer;;
+}
+.comment-button:active {
+  color: rgb(185, 185, 185);
+}
+
+.comment-button:hover {
+  color: rgb(34, 34, 34);
+}
+
+.comment-form {
+  display: flex;
+  justify-content: center;
+}
+
+input.comment-input {
+  width: 450px;
+}
+
+input[type=text] {
+  border: 1px solid #00000020;
+  border-radius: 4px;
+}
+
+.container-body {
+  padding-left: 30px;
+  text-align: left;
+}
+
+ul {
+  list-style-type:none;
+}
+ li {
+  padding: 5px;
+ }

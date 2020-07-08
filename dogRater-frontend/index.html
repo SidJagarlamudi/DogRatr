@@ -1,6 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <meta charset="utf-8" />
+    <title>Dog Ratr</title>  
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script defer type="text/javascript" src="index.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" />
+  </head>
+  <body>
+    <! -- This is the just the top h1 with the title, no div here --> 
+    <h1>DogRatr</h1>
+    
+    <div class ="full-div">
+      <! -- full div holds EVERYTHING in the body, it keeps them all in place --> 
+        <div class="user-div">
+          <! -- this is the user section on the side, this div just holds the whole --> 
+          <div class="username">
+            <! -- this holds the inner profile data --> 
+            <h3>Profile</h3>
+            <hr>
+            <p>dogg.butt</p>
+            <p><img id="icon" src="https://i.pinimg.com/originals/31/6b/d3/316bd38c20cb95f7bc51f0670a0b6309.jpg"></p>
+            <p id="p-1">Holy cow I love doggos kfslkhfsdkf</p>
+            <p id="p-2">So many doggos on here give me doggos</p>
+          </div>
+        </div>
+        <! -- this is outside user-div, but still inside full-div --> 
 
-<h1 class= "posts"> posts </h1>
+
+        <! ------------------------------------- --> 
+    <div class="post-container">
+      <! -- this holds the entire post --> 
+      <div class="post-card">
+        <! -- this is the inner post section --> 
+        <div class="username-container">
+          <! -- this is the username,icon section --> 
+          <p><img id="icon" src="https://i.pinimg.com/originals/31/6b/d3/316bd38c20cb95f7bc51f0670a0b6309.jpg"> dogg.butt</p>
+        </div>
+        <img id="image" src="https://static.boredpanda.com/blog/wp-content/org_uploads/2014/06/cute-dog.jpg">
+          <p>OH. MY. GOD. 🥺 10000000/10 </p>
+          <div class="likes-section">
+            <! -- this is like section --> 
+            <button class="like-button"><i class="far fa-heart"></i></button>
+            <span id="like-id" class="likes">0</span>
+          </div>
+          <div class="comment-section">
+            <! -- this is comments section --> 
+            <hr>
+            <form class="comment-form">
+              <input
+                class="comment-input"
+                type="text"
+                name="comment"
+                placeholder=""
+              />
+              <button class="comment-button"><i class="far fa-comment"></i></button>
+            </form>
+            <ul>
+              <li>wowzers!!</li>
+              <li> doggo!! </li>
+              <li>well hot dog!</li>
+            </ul>
+          </div>
+      </div>
+    </div>
+    <! -- outside of the post divs, still in full div --> 
 
 
-
-<script src="./index.js" defer></script>
+    <! ------------------------------------- --> 
+    <div class="top-dog-container">
+      <! -- this is the top dog section --> 
+        <h3>Top Dog Posts 🐕</h3>
+        <div class="container-body">
+          <! -- this is the inner top dog section --> 
+          <p><img id="icon" src="https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-1100x628.jpg">Jorge <i class="fas fa-heart"></i> 9</p>
+            <ul>
+              <li>good doggo 10/10</li>
+            </ul>
+          <p><img id="icon" src="https://scx2.b-cdn.net/gfx/news/hires/2018/2-dog.jpg">Sam <i class="fas fa-heart"></i> 8</p>
+            <ul>
+              <li>gosh 1000/10</li>
+            </ul>
+          <p><img id="icon" src="https://www.northdeltareporter.com/wp-content/uploads/2020/05/21636631_web1_raccoon-pic-GPS.jpg">Bandit <i class="fas fa-heart"></i> 7</p>
+            <ul>
+              <li>trash doogo 10000/10</li>
+            </ul>
+      </div>
+    </div>
+  </div>
+  <! -- this is outside full div --> 
+  </body>
+</html>
