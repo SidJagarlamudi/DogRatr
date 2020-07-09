@@ -40,7 +40,7 @@ function createPostDiv(postData) {
   <div class="likes-section">
     <! -- this is like section -->
     <button class="like-button"><i class="far fa-heart"></i></button>
-    <span id="like-id" class="likes">${postData.likes}</span>
+    <span data-id=${postData.likes} class="likes">${postData.likes}</span>
   </div>
   <div class="comment-section">
     <! -- this is comments section -->
@@ -105,13 +105,13 @@ formButton.addEventListener("click", toggleForm);
 form.addEventListener("submit", submitNewPost);
 
 ///////////////////////////////////////LIKE
-/*
+
 function renderNewLike(postData) {
-  likePost();
+  likePost(postData);
 }
 function likePost() {
   const id = event.target.dataset.id;
-  fetch(`http://localhost:3000/posts/${id}`, patchObj())
+  fetch(`http://localhost:3000/posts/${id}`, patchObj(postData))
     .then((resp) => resp.json())
     .then((postData) => console.log(postData))
     .catch((err) => console.log(err));
@@ -131,4 +131,3 @@ function patchObj() {
 }
 
 likebutton.addEventListener("click", renderNewLike);
-*/
