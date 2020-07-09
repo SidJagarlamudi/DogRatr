@@ -10,7 +10,6 @@
 User.destroy_all
 Post.destroy_all
 Comment.destroy_all
-Like.destroy_all
 
 zoe = User.create(name: "Zoe", email: "zoe@email.com")
 sid = User.create(name: "Sid", email: "sid@email.com")
@@ -22,5 +21,3 @@ comment1 = Comment.create(caption: "awhhhhhh!", user_id: zoe.id, post_id: post2.
 comment2 = Comment.create(caption: "I want one", user_id: sid.id, post_id: post1.id)
 comment3 = Comment.create(caption: "Too adorbz omg", user_id: zoe.id, post_id: post2.id)
 
-like1 = Like.create(user_id: zoe.id, post_id: post2.id)
-like2 = Like.create(user_id: sid.id , post_id: post1.id)

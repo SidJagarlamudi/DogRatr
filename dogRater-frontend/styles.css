@@ -1,6 +1,6 @@
 body {
-  font-family: 'Ubuntu', sans-serif;
-  background: #F5FFFA;
+  font-family: "Ubuntu", sans-serif;
+  background: #f5fffa;
 }
 
 h1 {
@@ -35,14 +35,13 @@ hr {
   border: 1px solid #00000020;
   border-radius: 3px;
   text-align: center;
-  background-color: white; 
+  background-color: white;
 }
- 
+
 /* the main post div */
 .post-container {
   width: 500px;
 }
-
 
 .user-div {
   width: 200px;
@@ -50,7 +49,6 @@ hr {
   border-radius: 3px;
   text-align: center;
   background-color: white;
-  
 }
 
 /* top dog inner container's */
@@ -63,7 +61,8 @@ hr {
   padding: 10px;
 }
 
-.user-div #p-1, #p-2 {
+.user-div #p-1,
+#p-2 {
   color: rgb(88, 88, 88);
 }
 
@@ -106,7 +105,7 @@ hr {
   border: none;
   background: none;
   transition: color 300ms;
-  cursor: pointer;;
+  cursor: pointer;
 }
 
 .like-button:hover {
@@ -127,7 +126,7 @@ hr {
   border: none;
   background: none;
   transition: color 300ms;
-  cursor: pointer;;
+  cursor: pointer;
 }
 .comment-button:active {
   color: rgb(185, 185, 185);
@@ -146,7 +145,7 @@ input.comment-input {
   width: 450px;
 }
 
-input[type=text] {
+input[type="text"] {
   border: 1px solid #00000020;
   border-radius: 4px;
 }
@@ -157,8 +156,8 @@ input[type=text] {
 }
 
 ul {
-  list-style-type:none;
+  list-style-type: none;
 }
- li {
+li {
   padding: 5px;
- }
+}
