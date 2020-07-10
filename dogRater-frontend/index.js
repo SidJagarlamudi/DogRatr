@@ -1,7 +1,7 @@
-const postCard = document.querySelector(".post-card");
 const formButton = document.getElementById("new-dog");
 const form = document.querySelector(".form-container");
 let addPost = false;
+const postForm = document.querySelector(".post-container");
 const likebutton = document.querySelector(".far fa-heart");
 
 function fetchPosts() {
@@ -20,47 +20,53 @@ function createPostDiv(postData) {
     })
     .join("");
 
+  const postContainer = document.querySelector(".post-container");
   const div = `
-  <! -- this is the inner post section -->
-  <div class="username-container">
-    <! -- this is the username,icon section -->
-    <p>
+      <div class="post-container">
+      <div class="post-card"> 
+      <! -- this is the inner post section -->
+      <div class="username-container">
+        <! -- this is the username,icon section -->
+        <p>
+          <img
+            id="icon"
+            src="https://i.pinimg.com/originals/31/6b/d3/316bd38c20cb95f7bc51f0670a0b6309.jpg"
+          />
+          fake user
+        </p>
+      </div>
       <img
-        id="icon"
-        src="https://i.pinimg.com/originals/31/6b/d3/316bd38c20cb95f7bc51f0670a0b6309.jpg"
+        id="image"
+        src=${postData.img_url}
       />
-      fake user
-    </p>
-  </div>
-  <img
-    id="image"
-    src=${postData.img_url}
-  />
-  <p>${postData.caption}</p>
-  <div class="likes-section">
-    <! -- this is like section -->
-    <button class="like-button"><i class="far fa-heart"></i></button>
-    <span data-id=${postData.likes} class="likes">${postData.likes}</span>
-  </div>
-  <div class="comment-section">
-    <! -- this is comments section -->
-    <hr />
-    <form class="comment-form">
-      <input
-        class="comment-input"
-        type="text"
-        name="comment"
-        placeholder=""
-      />
-      <button class="comment-button">
-        <i class="far fa-comment"></i>
-      </button>
-    </form>
-    <ul >
-    ${comments}
-    </ul>
-  </div>`;
-  postCard.innerHTML += div;
+      <p>${postData.caption}</p>
+      <div class="likes-section">
+        <! -- this is like section -->
+        <button class="like-button"><i class="far fa-heart"data-id=${postData.id}></i></button>
+        <span data-id=${postData.likes} class="likes">${postData.likes}</span>
+      </div>
+      <div class="comment-section">
+        <! -- this is comments section -->
+        <hr />
+        <form class="comment-form">
+          <input
+            class="comment-input"
+            type="text"
+            name="comment"
+            placeholder=""
+          />
+          <button class="comment-button">
+            <i class="far fa-comment"></i>
+          </button>
+        </form>
+        <ul >
+        ${comments}
+        </ul>
+      </div>
+      </div>
+      </div>
+      `;
+  postContainer.innerHTML += div;
 }
 
 fetchPosts();
@@ -98,7 +104,7 @@ function postObj(caption, img_url) {
 
 function toggleForm() {
   addPost = !addPost;
-  form.style.display = addPost ? "block" : "none";
+  form.style.display = addPost ? "none" : "block";
 }
 
 formButton.addEventListener("click", toggleForm);
@@ -106,18 +112,27 @@ form.addEventListener("submit", submitNewPost);
 
 ///////////////////////////////////////LIKE
 
-function renderNewLike(postData) {
-  likePost(postData);
+function renderNewLike() {
+  if (event.target.tagName === "I") {
+    likePostFrontend();
+    likePostBackend();
+  }
 }
-function likePost() {
-  const id = event.target.dataset.id;
-  fetch(`http://localhost:3000/posts/${id}`, patchObj(postData))
+function likePostFrontend() {
+  const likes = event.target.parentElement.parentElement.children[1];
+  const likesNum = parseInt(likes.innerHTML);
+  likes.innerHTML = `${likesNum + 1}`;
+}
+function likePostBackend() {
+  fetch("http://localhost:3000/posts", patchObj())
     .then((resp) => resp.json())
     .then((postData) => console.log(postData))
     .catch((err) => console.log(err));
 }
 
 function patchObj() {
+  const likesString = event.target.parentElement.parentElement.children[1];
+  const likes = parseInt(likesString.innerHTML);
   return {
     method: "PATCH",
     headers: {
@@ -125,9 +140,9 @@ function patchObj() {
       Accept: "application/json",
     },
     body: JSON.stringify({
-      likes: likes + 1,
+      likes: likes,
     }),
   };
 }
 
-likebutton.addEventListener("click", renderNewLike);
+postForm.addEventListener("click", renderNewLike);

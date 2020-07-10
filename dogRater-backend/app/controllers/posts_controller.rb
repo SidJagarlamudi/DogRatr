@@ -11,9 +11,10 @@ class PostsController < ApplicationController
     render json: post
   end
 
-  #def update 
-    #post = Post.find(params[:id])
-    #post.update(params[:likes])
-    #render json: PostSerializer.new(post)
-  #end 
+  def update
+
+    post = Post.update(likes: params[:likes])
+
+    render json: post
+  end 
 end
